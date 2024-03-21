@@ -6,8 +6,11 @@ To use this package, import the module and call `load`:
 
 ```V
 import dotenv
+import os
+
 // Loads `.env` file by default
 parsed := dotenv.load() or { panic(err) }
+assert os.getenv('KEY') == parsed['KEY']
 ```
 
 To load one or more specific files:
